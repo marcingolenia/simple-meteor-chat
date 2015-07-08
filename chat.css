@@ -1,0 +1,65 @@
+body {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  background-color: black;
+  position: absolute;
+  font-family: verdana;
+}
+* {
+  box-sizing: border-box;
+}
+h1 {
+  text-align: center;
+}
+.container {
+  border-radius: 10px;
+  background-color: white;
+  margin: 10px 20px 20px 20px;
+  padding: 10px;
+  box-shadow: 5px 5px 10px black;
+}
+input[name="Message"] {
+  border-left: none;
+  border-right: none;
+  font-size: 15px;
+  padding: 5px;
+  width: 50vw;
+  min-width: 300px;
+  border: none;
+  outline-color: gray;
+  background-color: rgb(210, 200, 200);
+}
+input[type="submit"] {
+  height: 40px;
+  width: 50px;
+}
+.messages-list {
+  display: block;
+  list-style: none;
+  height: 50vh;
+  overflow: auto;
+  padding: 0;
+}
+.messages-list li {
+  border-radius: 5px;
+  padding: 2px;
+  animation: anim-MessageShow;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+}
+.messages-list li:nth-child(even) {
+  background-color: rgb(210, 200, 200)!important;
+  color: black;
+}
+.messages-list caption {
+  font-weight: bold;
+}
+@keyframes anim-MessageShow {
+  0% {
+    transform: scale3d(0.5, 0.5, 1);
+  }
+  100% {
+    transform: scale3d(1, 1, 1);
+  }
+}

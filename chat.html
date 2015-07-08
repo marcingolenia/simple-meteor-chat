@@ -1,0 +1,27 @@
+<head>
+  <title>chat</title>
+</head>
+<body>
+  <div class="container">
+    <header>
+      {{> loginButtons}}
+      <h1>Simple chat</h1>
+      {{#if currentUser}}
+      <form class="new-chatMessage">
+        <input type="text" name="Message" placeholder="New message" autocomplete="off">
+        <input type="submit" value="Send">
+      </form>
+      {{/if}}
+    </header>
+    <ul class="messages-list">
+      {{#each chatMessages}} {{>chatMessage}} {{/each}}
+    </ul>
+  </div>
+</body>
+
+<template name="chatMessage">
+  <li>
+    <caption class="user-name">{{Author}}</caption>
+    <p class="chat message">{{Message}}</p>
+  </li>
+</template>
